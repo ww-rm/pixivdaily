@@ -1,0 +1,44 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Generate top10
+
+on:
+  schedule:
+    - cron: '0 21 * * *'
+
+jobs:
+  runscript:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.8.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8.10
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install -r "scripts_py/requirements.txt"
+
+    - name: Config git
+      run: |
+        git config user.email "ww-rm@qq.com"
+        git config user.name "ww-rm"
+        git pull --ff
+
+    - name: Run Script
+      run: |
+        python3 "scripts_py/generate.py" --daily_top10
+        python3 "scripts_py/generate.py" --monthly_top10
+
+    - name: Commit dailysignin
+      run: |
+        git add .
+        bash "scripts/safe_commit.sh" "autorun-gentop10"
+        git pull --ff
+        git push
