@@ -36,7 +36,7 @@ jobs:
         python3 "scripts_py/generate.py" --daily_top10
         python3 "scripts_py/generate.py" --monthly_top10
 
-    - name: Commit dailysignin
+    - name: Commit gentop10
       run: |
         git add .
         bash "scripts/safe_commit.sh" "autorun-gentop10"
