@@ -1,10 +1,10 @@
+http://ww-rm.github.io/pixivdaily/about/index.html
+http://ww-rm.github.io/pixivdaily/categories/index.html
+http://ww-rm.github.io/pixivdaily/tags/index.html
 http://ww-rm.github.io/pixivdaily/posts/2021/05/21/%E6%B5%8B%E8%AF%95%E5%B8%96/
 http://ww-rm.github.io/pixivdaily/posts/2022/08/08/dailytop10/
 http://ww-rm.github.io/pixivdaily/posts/2022/08/08/monthlytop10/
 http://ww-rm.github.io/pixivdaily/404.html
-http://ww-rm.github.io/pixivdaily/about/index.html
-http://ww-rm.github.io/pixivdaily/categories/index.html
-http://ww-rm.github.io/pixivdaily/tags/index.html
 http://ww-rm.github.io/pixivdaily
 http://ww-rm.github.io/pixivdaily/tags/%E6%B5%8B%E8%AF%95/
 http://ww-rm.github.io/pixivdaily/tags/%E9%9B%8C%E3%81%AE%E9%A1%94/
