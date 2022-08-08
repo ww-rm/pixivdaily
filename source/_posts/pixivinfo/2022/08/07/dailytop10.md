@@ -53,7 +53,7 @@ categories:
 
 <i class="fa fa-triangle-exclamation"></i>**多图警告**<i class="fa fa-triangle-exclamation"></i>
 
-[Pixiv]("https://www.pixiv.net/) 日榜前十, 点击下方阅读全文查看详细内容~
+[Pixiv](https://www.pixiv.net/) 日榜前十, 点击下方阅读全文查看详细内容~
 
 <!-- more -->
 
