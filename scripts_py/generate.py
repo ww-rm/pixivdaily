@@ -50,7 +50,7 @@ def get_top10_details(type_: str = "daily") -> dict:
         tags.update(t["tag"] for t in illust_info["tags"]["tags"])
 
     data["rank_date"] = datetime.strptime(ranking_data["date"], "%Y%m%d")
-    data["tags"] = list(tags)
+    data["tags"] = sorted(tags)
     data["illusts"] = illusts
 
     return data
