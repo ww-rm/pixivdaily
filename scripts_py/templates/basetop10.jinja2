@@ -1,5 +1,5 @@
 ---
-title: "{{ "%04d 年 %02d 月 %02d 日" | format(today.year, today.month, today.day) }} {{ rank_type }}榜 Top10"
+title: "{{ "%04d 年 %02d 月 %02d 日" | format(rank_date.year, rank_date.month, rank_date.day) }} {{ rank_type }}榜 Top10"
 date: {{ "%04d-%02d-%02d %02d:%02d:%02d" | format(today.year, today.month, today.day, today.hour, today.minute, today.second) }}
 tags:
     {%- for tag in tags %}
@@ -7,9 +7,9 @@ tags:
     {%- endfor %}
 categories:
     - "{{ rank_type }}榜"
-    - "{{ "%04d" | format(today.year) }}"
-    - "{{ "%02d" | format(today.month) }}"
-    - "{{ "%02d" | format(today.day) }}"
+    - "{{ "%04d" | format(rank_date.year) }}"
+    - "{{ "%02d" | format(rank_date.month) }}"
+    - "{{ "%02d" | format(rank_date.day) }}"
 ---
 
 <i class="fa fa-triangle-exclamation"></i>**多图警告**<i class="fa fa-triangle-exclamation"></i>

@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+from datetime import datetime
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
@@ -48,6 +49,7 @@ def get_top10_details(type_: str = "daily") -> dict:
         illusts.append(illust_info)
         tags.update(t["tag"] for t in illust_info["tags"]["tags"])
 
+    data["rank_date"] = datetime.strptime(ranking_data["date"], "%Y%m%d")
     data["tags"] = list(tags)
     data["illusts"] = illusts
 
@@ -63,12 +65,13 @@ def gen_daily_top10():
         "today": today,
         "rank_type": "日"
     }
-    render_content.update(get_top10_details("daily"))
+    ranking_data = get_top10_details("daily")
+    render_content.update(ranking_data)
 
     tmp = env.get_template("dailytop10.jinja2")
     output = tmp.render(render_content)
 
-    save_path = POST_DIR.joinpath("{today.year:04d}/{today.month:02d}/{today.day:02d}/dailytop10.md")
+    save_path = POST_DIR.joinpath(f"{ranking_data['rank_date'].strftime('%Y/%m/%d')}/dailytop10.md")
     save_path.parent.mkdir(parents=True, exist_ok=True)
     save_path.write_text(output, encoding="utf8")
 
@@ -82,12 +85,13 @@ def gen_monthly_top10():
         "today": today,
         "rank_type": "月"
     }
-    render_content.update(get_top10_details("monthly"))
+    ranking_data = get_top10_details("monthly")
+    render_content.update(ranking_data)
 
     tmp = env.get_template("monthlytop10.jinja2")
     output = tmp.render(render_content)
 
-    save_path = POST_DIR.joinpath("{today.year:04d}/{today.month:02d}/{today.day:02d}/monthlytop10.md")
+    save_path = POST_DIR.joinpath(f"{ranking_data['rank_date'].strftime('%Y/%m/%d')}/monthlytop10.md")
     save_path.parent.mkdir(parents=True, exist_ok=True)
     save_path.write_text(output, encoding="utf8")
 
