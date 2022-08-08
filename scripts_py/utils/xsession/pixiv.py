@@ -300,6 +300,7 @@ class PixivBase(XSession):
 
         return self._check_response(res)
 
+    @empty_retry()
     def _get_illust_pages(self, illust_id) -> list:
         res = self.get(
             PixivBase.URL_ajax_illust_pages.format(illust_id=illust_id)
@@ -523,6 +524,7 @@ class Pixiv(PixivBase):
 
         return result
 
+    @empty_retry()
     def get_illust(self, illust_id: str) -> dict:
         """Get illust info."""
 
@@ -553,6 +555,7 @@ class Pixiv(PixivBase):
             return {}
         return all_info
 
+    @empty_retry()
     def get_ranking_daily(self, p: int = 1, content: str = "illust", date: str = None, r18: bool = False) -> dict:
         """Get daily ranking info.
 
@@ -570,6 +573,7 @@ class Pixiv(PixivBase):
             return {}
         return ranking_info
 
+    @empty_retry()
     def get_ranking_weekly(self, p: int = 1, content: str = "illust", date: str = None, r18: bool = False) -> dict:
         """Get weekly ranking info.
 
@@ -587,6 +591,7 @@ class Pixiv(PixivBase):
             return {}
         return ranking_info
 
+    @empty_retry()
     def get_ranking_monthly(self, p: int = 1, content: str = "illust", date: str = None) -> dict:
         """Get monthly ranking info.
 

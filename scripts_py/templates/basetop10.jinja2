@@ -1,0 +1,39 @@
+---
+title: "{{ "%04d 年 %02d 月 %02d 日" | format(today.year, today.month, today.day) }} {{ rank_type }}榜 Top10"
+date: {{ "%04d-%02d-%02d %02d:%02d:%02d" | format(today.year, today.month, today.day, today.hour, today.minute, today.second) }}
+tags:
+    {%- for tag in tags %}
+    - "{{ tag }}"
+    {%- endfor %}
+categories:
+    - "{{ rank_type }}榜"
+    - "{{ "%04d" | format(today.year) }}"
+    - "{{ "%02d" | format(today.month) }}"
+    - "{{ "%02d" | format(today.day) }}"
+---
+
+<i class="fa fa-triangle-exclamation"></i>**多图警告**<i class="fa fa-triangle-exclamation"></i>
+
+[Pixiv]("https://www.pixiv.net/) {{ rank_type }}榜前十, 点击下方阅读全文查看详细内容~
+
+<!-- more -->
+
+---
+{% for illust_info in illusts %}
+{{ "## Top %d" | format(loop.index) }}
+
+{{ "{% note info %}" }}
+{{ "标题: %s" | format(illust_info["illustTitle"]) }}
+{{ "PID: %s 画师: %s" | format(illust_info["illustId"], illust_info["userName"]) }}
+{{ "点赞: %d 收藏: %d 浏览: %d" | format(illust_info["likeCount"], illust_info["bookmarkCount"], illust_info["viewCount"]) }}
+{{ "标签: " }}{% for tag in illust_info["tags"]["tags"] -%}
+{{ "# %s" | format(tag["tag"]) }}{% if not loop.last %}{{", "}}{% endif %}
+{%- endfor %}
+{{ "{% endnote %}" }}
+
+{{ "{%% note warning '点击展开作品内容, 共 %d 张' %%}" | format(illust_info["pageCount"]) }}
+{% for page_urls in illust_info["urls"] -%}
+![{{ "%s-%d" | format(illust_info["illustId"], loop.index0 ) }}]({{ page_urls["urls"]["original"] }})
+{% endfor -%}
+{{ "{% endnote %}" }}
+{% endfor %}

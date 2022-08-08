@@ -1,0 +1,106 @@
+from argparse import ArgumentParser
+from pathlib import Path
+
+from jinja2 import Environment, FileSystemLoader
+
+from utils import nowbeijing, xsession
+
+POST_DIR = Path("./source/_posts/pixivinfo/")
+TEMPLATE_DIR = Path("./scripts_py/templates")
+
+
+def get_top10_details(type_: str = "daily") -> dict:
+    """"""
+    pixiv = xsession.Pixiv()
+    pixiv.headers.update({
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0"
+    })
+
+    ### DEBUG ###
+    # pixiv.proxies.update({
+    #     "http": "http://127.0.0.1:10809",
+    #     "https": "http://127.0.0.1:10809"
+    # })
+
+    if type_ == "monthly":
+        ranking_data = pixiv.get_ranking_monthly()
+    elif type_ == "weekly":
+        ranking_data = pixiv.get_ranking_weekly()
+    else:
+        ranking_data = pixiv.get_ranking_daily()
+
+    data = {}
+
+    tags = set()
+    illusts = []
+    for content in ranking_data["contents"][:10]:
+        illust_info = pixiv.get_illust(content["illust_id"])
+        illust_urls = pixiv._get_illust_pages(content["illust_id"])
+
+        # 反向代理, 替换 url
+        for page_urls in illust_urls:
+            for k in page_urls["urls"]:
+                page_urls["urls"][k] = page_urls["urls"][k].replace("i.pximg.net", "i.pixiv.re")
+
+        # 替换掉 illust_info 里的 url
+        illust_info["urls"] = illust_urls
+
+        illusts.append(illust_info)
+        tags.update(t["tag"] for t in illust_info["tags"]["tags"])
+
+    data["tags"] = list(tags)
+    data["illusts"] = illusts
+
+    return data
+
+
+def gen_daily_top10():
+    env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
+    today = nowbeijing()
+
+    # daily top10 blog
+    render_content = {
+        "today": today,
+        "rank_type": "日"
+    }
+    render_content.update(get_top10_details("daily"))
+
+    tmp = env.get_template("dailytop10.jinja2")
+    output = tmp.render(render_content)
+
+    save_path = POST_DIR.joinpath("{today.year:04d}/{today.month:02d}/{today.day:02d}/dailytop10.md")
+    save_path.parent.mkdir(parents=True, exist_ok=True)
+    save_path.write_text(output, encoding="utf8")
+
+
+def gen_monthly_top10():
+    env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
+    today = nowbeijing()
+
+    # monthly top10 blog
+    render_content = {
+        "today": today,
+        "rank_type": "月"
+    }
+    render_content.update(get_top10_details("monthly"))
+
+    tmp = env.get_template("monthlytop10.jinja2")
+    output = tmp.render(render_content)
+
+    save_path = POST_DIR.joinpath("{today.year:04d}/{today.month:02d}/{today.day:02d}/monthlytop10.md")
+    save_path.parent.mkdir(parents=True, exist_ok=True)
+    save_path.write_text(output, encoding="utf8")
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser()
+
+    parser.add_argument("--daily_top10", action="store_true")
+    parser.add_argument("--monthly_top10", action="store_true")
+
+    args = parser.parse_args()
+
+    if args.daily_top10:
+        gen_daily_top10()
+    if args.monthly_top10:
+        gen_monthly_top10()
