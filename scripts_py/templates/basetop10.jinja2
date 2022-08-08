@@ -21,15 +21,15 @@ categories:
 {{ "## Top %d" | format(loop.index) }}
 
 {{ "{% note info %}" }}
-{{ "标题: %s" | format(illust_info["illustTitle"]) }}
-{{ "PID: %s 画师: %s" | format(illust_info["illustId"], illust_info["userName"]) }}
-{{ "点赞: %d 收藏: %d 浏览: %d" | format(illust_info["likeCount"], illust_info["bookmarkCount"], illust_info["viewCount"]) }}
-{{ "标签: " }}{% for tag in illust_info["tags"]["tags"] -%}
+{{ "**标题**: %s" | format(illust_info["illustTitle"]) }}
+{{ "**PID**: %s **画师**: %s" | format(illust_info["illustId"], illust_info["userName"]) }}
+{{ "**点赞**: %d **收藏**: %d **浏览**: %d" | format(illust_info["likeCount"], illust_info["bookmarkCount"], illust_info["viewCount"]) }}
+{{ "**标签**: " }}{% for tag in illust_info["tags"]["tags"] -%}
 {{ "# %s" | format(tag["tag"]) }}{% if not loop.last %}{{", "}}{% endif %}
 {%- endfor %}
 {{ "{% endnote %}" }}
 
-{{ "{%% note warning '点击展开作品内容, 共 %d 张' %%}" | format(illust_info["pageCount"]) }}
+{{ "{%% note warning '点击展开作品内容, 共 **%d** 张' %%}" | format(illust_info["pageCount"]) }}
 {% for page_urls in illust_info["urls"] -%}
 ![{{ "%s-%d" | format(illust_info["illustId"], loop.index0 ) }}]({{ page_urls["urls"]["original"] }})
 {% endfor -%}
