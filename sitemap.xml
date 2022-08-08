@@ -29,6 +29,15 @@
   </url>
   
   <url>
+    <loc>http://ww-rm.github.io/pixivdaily/404.html</loc>
+    
+    <lastmod>2022-08-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ww-rm.github.io/pixivdaily/about/index.html</loc>
     
     <lastmod>2022-08-08</lastmod>
