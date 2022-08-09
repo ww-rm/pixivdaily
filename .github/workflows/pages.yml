@@ -2,8 +2,7 @@ name: Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   pages:
