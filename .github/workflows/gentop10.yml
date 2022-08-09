@@ -39,6 +39,6 @@ jobs:
     - name: Commit dailysignin
       run: |
         git add .
-        bash "scripts/safe_commit.sh" "autorun-gentop10"
+        bash "scripts_sh/safe_commit.sh" "autorun-gentop10"
         git pull --ff
         git push
