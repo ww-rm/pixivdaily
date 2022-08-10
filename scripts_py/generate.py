@@ -19,10 +19,10 @@ def get_top10_details(type_: str = "daily") -> dict:
     })
 
     ### DEBUG ###
-    pixiv.proxies.update({
-        "http": "http://127.0.0.1:10809",
-        "https": "http://127.0.0.1:10809"
-    })
+    # pixiv.proxies.update({
+    #     "http": "http://127.0.0.1:10809",
+    #     "https": "http://127.0.0.1:10809"
+    # })
 
     if type_ == "monthly":
         ranking_data = pixiv.get_ranking_monthly()
