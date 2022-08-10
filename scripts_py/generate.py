@@ -2,12 +2,13 @@ from argparse import ArgumentParser
 from datetime import datetime
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader
-
-from utils import nowbeijing, xsession
+from utils import jinja_env, nowbeijing, pximg_reverse_proxy, xsession
 
 POST_DIR = Path("./source/_posts/pixivinfo/")
-TEMPLATE_DIR = Path("./scripts_py/templates")
+TEMPLATE_DIR = Path("./scripts_py/templates/")
+CUMSTOM_FILTERS = {
+    "url_pximg": pximg_reverse_proxy
+}
 
 
 def get_top10_details(type_: str = "daily") -> dict:
@@ -18,10 +19,10 @@ def get_top10_details(type_: str = "daily") -> dict:
     })
 
     ### DEBUG ###
-    # pixiv.proxies.update({
-    #     "http": "http://127.0.0.1:10809",
-    #     "https": "http://127.0.0.1:10809"
-    # })
+    pixiv.proxies.update({
+        "http": "http://127.0.0.1:10809",
+        "https": "http://127.0.0.1:10809"
+    })
 
     if type_ == "monthly":
         ranking_data = pixiv.get_ranking_monthly()
@@ -38,11 +39,6 @@ def get_top10_details(type_: str = "daily") -> dict:
         illust_info = pixiv.get_illust(content["illust_id"])
         illust_urls = pixiv._get_illust_pages(content["illust_id"])
 
-        # 反向代理, 替换 url
-        for page_urls in illust_urls:
-            for k in page_urls["urls"]:
-                page_urls["urls"][k] = page_urls["urls"][k].replace("i.pximg.net", "i.pixiv.re")
-
         # 替换掉 illust_info 里的 url
         illust_info["urls"] = illust_urls
 
@@ -57,7 +53,7 @@ def get_top10_details(type_: str = "daily") -> dict:
 
 
 def gen_daily_top10():
-    env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
+    env = jinja_env(TEMPLATE_DIR, CUMSTOM_FILTERS)
     today = nowbeijing()
 
     # daily top10 blog
@@ -71,13 +67,14 @@ def gen_daily_top10():
     tmp = env.get_template("dailytop10.jinja2")
     output = tmp.render(render_content)
 
-    save_path = POST_DIR.joinpath(f"{ranking_data['rank_date'].strftime('%Y/%m/%d')}/dailytop10.md")
+    filename = f"dailytop10-{ranking_data['rank_date'].strftime('%Y%m%d')}"
+    save_path = POST_DIR.joinpath(f"{ranking_data['rank_date'].strftime('%Y/%m/%d')}/{filename}.md")
     save_path.parent.mkdir(parents=True, exist_ok=True)
     save_path.write_text(output, encoding="utf8")
 
 
 def gen_monthly_top10():
-    env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
+    env = jinja_env(TEMPLATE_DIR, CUMSTOM_FILTERS)
     today = nowbeijing()
 
     # monthly top10 blog
@@ -91,7 +88,8 @@ def gen_monthly_top10():
     tmp = env.get_template("monthlytop10.jinja2")
     output = tmp.render(render_content)
 
-    save_path = POST_DIR.joinpath(f"{ranking_data['rank_date'].strftime('%Y/%m/%d')}/monthlytop10.md")
+    filename = f"monthlytop10-{ranking_data['rank_date'].strftime('%Y%m%d')}"
+    save_path = POST_DIR.joinpath(f"{ranking_data['rank_date'].strftime('%Y/%m/%d')}/{filename}.md")
     save_path.parent.mkdir(parents=True, exist_ok=True)
     save_path.write_text(output, encoding="utf8")
 

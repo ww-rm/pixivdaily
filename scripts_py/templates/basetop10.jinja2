@@ -31,7 +31,7 @@ categories:
 
 {{ "{%% note warning '点击展开作品内容, 共 **%d** 张' %%}" | format(illust_info["pageCount"]) }}
 {% for page_urls in illust_info["urls"] -%}
-![{{ "%s-%d" | format(illust_info["illustId"], loop.index0 ) }}]({{ page_urls["urls"]["original"] }})
+![{{ "%s-%d" | format(illust_info["illustId"], loop.index0 ) }}]({{ page_urls["urls"]["original"] | url_pximg }})
 {% endfor -%}
 {{ "{% endnote %}" }}
 {% endfor %}
