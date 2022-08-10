@@ -3,7 +3,9 @@ title: 404 Page Not Found
 permalink: /404.html
 ---
 
-手滑点错了(´･_･\`)? 来看点~~涩图~~放松一下吧(′▽\`〃)~
+手滑点错了(´･_･\`)?
+
+来看点~~涩图~~放松一下吧(′▽\`〃)~
 
 ![Random Acg Pic](https://tenapi.cn/acg/)
 
