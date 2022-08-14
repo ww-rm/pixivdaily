@@ -12,8 +12,8 @@ http://ww-rm.github.io/pixivdaily/posts/2022/08/12/monthlytop10-20220811/
 http://ww-rm.github.io/pixivdaily/posts/2022/08/13/dailytop10-20220812/
 http://ww-rm.github.io/pixivdaily/posts/2022/08/13/monthlytop10-20220812/
 http://ww-rm.github.io/pixivdaily/404.html
-http://ww-rm.github.io/pixivdaily/categories/index.html
 http://ww-rm.github.io/pixivdaily/about/index.html
+http://ww-rm.github.io/pixivdaily/categories/index.html
 http://ww-rm.github.io/pixivdaily/tags/index.html
 http://ww-rm.github.io/pixivdaily
 http://ww-rm.github.io/pixivdaily/tags/%E6%B5%8B%E8%AF%95/
