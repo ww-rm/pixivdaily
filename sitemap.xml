@@ -20,6 +20,42 @@
   </url>
   
   <url>
+    <loc>http://ww-rm.github.io/pixivdaily/posts/2022/08/20/dailytop10-20220819/</loc>
+    
+    <lastmod>2022-08-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/posts/2022/08/20/monthlytop10-20220819/</loc>
+    
+    <lastmod>2022-08-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/about/index.html</loc>
+    
+    <lastmod>2022-08-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/categories/index.html</loc>
+    
+    <lastmod>2022-08-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ww-rm.github.io/pixivdaily/posts/2022/08/08/dailytop10-20220807/</loc>
     
     <lastmod>2022-08-20</lastmod>
@@ -237,24 +273,6 @@
   
   <url>
     <loc>http://ww-rm.github.io/pixivdaily/404.html</loc>
-    
-    <lastmod>2022-08-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ww-rm.github.io/pixivdaily/about/index.html</loc>
-    
-    <lastmod>2022-08-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ww-rm.github.io/pixivdaily/categories/index.html</loc>
     
     <lastmod>2022-08-20</lastmod>
     
@@ -4648,6 +4666,188 @@
   
   <url>
     <loc>http://ww-rm.github.io/pixivdaily/tags/%E9%BB%92%E9%AB%AA/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E5%8D%81%E5%85%AD%E5%A4%9C%E5%92%B2%E5%A4%9C/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E5%A4%95%E7%84%BC%E3%81%91/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E5%A6%96%E7%B2%BE/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E7%99%BD%E3%81%A8%E9%BB%92/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E8%83%A1%E6%A1%83/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/2B/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/NieR10000users%E5%85%A5%E3%82%8A/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/NieR-Automata/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/OC/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/R-15/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E3%81%99%E3%81%98/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E3%81%9A%E3%81%A3%E3%81%97%E3%82%8A%E4%B9%B3/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E3%82%B7%E3%83%A3%E3%83%84/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E3%83%8A%E3%82%A4%E3%83%88%E3%83%97%E3%83%BC%E3%83%AB/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E3%83%8B%E3%83%BC%E3%82%A2%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%82%BF/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E3%83%8B%E3%83%BC%E3%82%BD/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E3%83%9D%E3%83%83%E3%83%89042/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E3%83%A8%E3%83%AB%E3%83%8F%E4%BA%8C%E5%8F%B7B%E5%9E%8B/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E6%9C%89%E6%A0%96%E5%B7%9D%E5%A4%8F%E8%91%89/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E7%9C%BC%E9%8F%A1%E5%B7%A8%E4%B9%B3/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E8%83%B8%E3%81%AE%E8%B0%B7%E9%96%93/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E8%83%B8%E3%83%9D%E3%83%81/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E9%AB%AA%E3%81%84%E3%81%98%E3%82%8A/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E9%AB%AA%E5%9E%8B%E3%83%81%E3%82%A7%E3%83%B3%E3%82%B8/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ww-rm.github.io/pixivdaily/tags/%E9%BB%92%E9%AB%AA%E3%83%9D%E3%83%8B%E3%83%BC%E3%83%86%E3%83%BC%E3%83%AB/</loc>
     <lastmod>2022-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
