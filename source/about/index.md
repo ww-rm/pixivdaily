@@ -27,5 +27,5 @@ type: about
 
 [Pixiv]: https://www.pixiv.net/
 [pixivre]: https://pixiv.re/
-[pixivdaily]: https://ww-rm.github.io/pixivdaliy/
+[pixivdaily]: https://ww-rm.github.io/pixivdaily/
 [home]: https://ww-rm.github.io/
