@@ -1,10 +1,5 @@
 http://ww-rm.github.io/pixivdaily/tags/index.html
 http://ww-rm.github.io/pixivdaily/posts/2021/05/21/%E6%B5%8B%E8%AF%95%E5%B8%96/
-http://ww-rm.github.io/pixivdaily/posts/2022/09/02/dailytop10-20220901/
-http://ww-rm.github.io/pixivdaily/posts/2022/09/02/monthlytop10-20220901/
-http://ww-rm.github.io/pixivdaily/posts/2022/09/03/dailytop10-20220902/
-http://ww-rm.github.io/pixivdaily/posts/2022/09/03/monthlytop10-20220902/
-http://ww-rm.github.io/pixivdaily/posts/2022/09/04/dailytop10-20220903/
 http://ww-rm.github.io/pixivdaily/posts/2022/09/04/monthlytop10-20220903/
 http://ww-rm.github.io/pixivdaily/posts/2022/09/05/dailytop10-20220904/
 http://ww-rm.github.io/pixivdaily/posts/2022/09/05/monthlytop10-20220904/
@@ -88,6 +83,11 @@ http://ww-rm.github.io/pixivdaily/posts/2022/08/31/dailytop10-20220830/
 http://ww-rm.github.io/pixivdaily/posts/2022/08/31/monthlytop10-20220830/
 http://ww-rm.github.io/pixivdaily/posts/2022/09/01/dailytop10-20220831/
 http://ww-rm.github.io/pixivdaily/posts/2022/09/01/monthlytop10-20220831/
+http://ww-rm.github.io/pixivdaily/posts/2022/09/02/dailytop10-20220901/
+http://ww-rm.github.io/pixivdaily/posts/2022/09/02/monthlytop10-20220901/
+http://ww-rm.github.io/pixivdaily/posts/2022/09/03/dailytop10-20220902/
+http://ww-rm.github.io/pixivdaily/posts/2022/09/03/monthlytop10-20220902/
+http://ww-rm.github.io/pixivdaily/posts/2022/09/04/dailytop10-20220903/
 http://ww-rm.github.io/pixivdaily/404.html
 http://ww-rm.github.io/pixivdaily
 http://ww-rm.github.io/pixivdaily/tags/%E6%B5%8B%E8%AF%95/
