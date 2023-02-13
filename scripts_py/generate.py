@@ -2,7 +2,7 @@ from argparse import ArgumentParser
 from datetime import datetime
 from pathlib import Path
 
-from utils import jinja_env, nowbeijing, pximg_reverse_proxy, xsession
+from utils import jinja_env, nowbeijing, pximg_reverse_proxy, xsession, get_original_imgurls
 
 POST_DIR = Path("./source/_posts/pixivinfo/")
 TEMPLATE_DIR = Path("./scripts_py/templates/")
@@ -36,8 +36,13 @@ def get_top10_details(type_: str = "daily") -> dict:
     tags = set()
     illusts = []
     for content in ranking_data["contents"][:10]:
-        illust_info = pixiv.get_illust(content["illust_id"])
-        illust_urls = pixiv._get_illust_pages(content["illust_id"])
+        illust_id = content["illust_id"]
+        illust_info = pixiv.get_illust(illust_id)
+        illust_urls = pixiv._get_illust_pages(illust_id)
+
+        # 手动生成 illust_info 里的 url
+        if not illust_urls:
+            illust_urls = get_original_imgurls(illust_id, content["url"], int(content["illust_page_count"]))
 
         # 替换掉 illust_info 里的 url
         illust_info["urls"] = illust_urls
