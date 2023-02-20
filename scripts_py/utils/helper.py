@@ -23,7 +23,7 @@ def jinja_env(temp_dir: Path, filters: dict):
 
 
 def get_original_imgurls(illust_id, url: str, page_count: int) -> list:
-    illust_date = re.search(f"[0-9]{4}/[0-9]{2}/[0-9]{2}/[0-9]{2}/[0-9]{2}/[0-9]{2}", url)
+    illust_date = re.search(r"[0-9]{4}/[0-9]{2}/[0-9]{2}/[0-9]{2}/[0-9]{2}/[0-9]{2}", url)
     if not illust_date:
         logging.getLogger(__name__).error(f"datetime not found in {url}")
         return []
