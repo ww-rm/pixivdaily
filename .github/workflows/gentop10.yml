@@ -5,72 +5,71 @@ name: Generate top10
 
 on:
   schedule:
-    - cron: '0 9,10,21,22 * * *'
+    - cron: "0 9,10,21,22 * * *"
 
 jobs:
   runscript:
-
     runs-on: ubuntu-20.04
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set up Python 3.8.10
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8.10
+      - name: Set up Python 3.8.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.10
 
-    - name: Config git
-      run: |
-        git config user.email "ww-rm@qq.com"
-        git config user.name "ww-rm"
-        git pull --ff
+      - name: Config git
+        run: |
+          git config user.email "ww-rm@qq.com"
+          git config user.name "ww-rm"
+          git pull --ff
 
-    - name: Install dependencies
-      run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install -r "scripts_py/requirements.txt"
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r "scripts_py/requirements.txt"
 
-    - name: Run Script
-      run: |
-        python3 "scripts_py/generate.py" --daily_top10
-        python3 "scripts_py/generate.py" --monthly_top10
+      - name: Run Script
+        run: |
+          python3 "scripts_py/generate.py" --daily_top10
+          python3 "scripts_py/generate.py" --monthly_top10
 
-    - name: Commit gentop10
-      run: |
-        git add .
-        bash "scripts_sh/safe_commit.sh" "autorun-gentop10"
-        git pull --ff
-        git push
+      - name: Commit gentop10
+        run: |
+          git add .
+          bash "scripts_sh/safe_commit.sh" "autorun-gentop10"
+          git pull --ff
+          git push
 
   pages:
-      needs: [runscript]
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
+    needs: [runscript]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-        - name: Use Node.js 16.x
-          uses: actions/setup-node@v1
-          with:
-            node-version: '16.x'
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
 
-        - name: Cache NPM dependencies
-          uses: actions/cache@v2
-          with:
-            path: node_modules
-            key: ${{ runner.OS }}-npm-cache
-            restore-keys: |
-              ${{ runner.OS }}-npm-cache
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
 
-        - name: Install Dependencies
-          run: npm install
+      - name: Install Dependencies
+        run: npm install
 
-        - name: Build
-          run: npm run build
-          
-        - name: Deploy
-          uses: peaceiris/actions-gh-pages@v3
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./public
-            publish_branch: gh-pages  # deploying branch
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages # deploying branch
