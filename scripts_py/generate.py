@@ -1,3 +1,4 @@
+import logging
 from argparse import ArgumentParser
 from datetime import datetime
 from pathlib import Path
@@ -42,6 +43,7 @@ def get_top10_details(type_: str = "daily") -> dict:
 
         # 手动生成 illust_info 里的 url
         if not illust_urls:
+            logging.getLogger(__name__).warning(f"Try to generate url for illust {illust_id}")
             illust_urls = get_original_imgurls(pixiv, illust_id, content["url"], int(content["illust_page_count"]))
 
         # 替换掉 illust_info 里的 url
