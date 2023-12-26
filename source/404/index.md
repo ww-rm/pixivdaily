@@ -7,6 +7,6 @@ permalink: /404.html
 
 来~~看点涩图~~放松一下吧(′▽\`〃)~
 
-![涩图在路上了...](https://tenapi.cn/acg/)
+![涩图不见了...](https://tenapi.cn/acg/)
 
 *[点击此处](https://ww-rm.github.io/pixivdaily/)返回主页面*
