@@ -3,7 +3,7 @@ title: "{{ "%04d 年 %02d 月 %02d 日" | format(rank_date.year, rank_date.month
 date: {{ "%04d-%02d-%02d %02d:%02d:%02d" | format(today.year, today.month, today.day, today.hour, today.minute, today.second) }}
 tags:
     {%- for tag in tags %}
-    - "{{ tag }}"
+    - "{{ tag | replace('"', '') }}"
     {%- endfor %}
 categories:
     - "{{ rank_type }}榜"
